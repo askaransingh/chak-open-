@@ -1,0 +1,99 @@
+.footer {
+  background: #0a0a0a;
+  color: #ddd;
+  padding: 3rem 2rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Headings */
+.footer-section h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #ff0000;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-section h2 {
+  color: #ff3333;
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.45rem 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li:hover {
+  color: #ffd700;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-section .email {
+  margin-top: 0.8rem;
+  color: #ffd700;
+  font-weight: 500;
+}
+
+.footer-section .phone,
+.footer-section .location {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Socials */
+.footer-socials {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 14px;
+}
+
+.footer-socials a {
+  color: #fff;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.2rem;
+  }
+  .footer-section h2 {
+    font-size: 1.2rem;
+  }
+}
