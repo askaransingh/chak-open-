@@ -28,7 +28,7 @@ async function handleRes(res) {
 }
 
 export const signupUser = async (data) => {
-  const res = await fetch(`https://newb-2.onrender.com/api/users/signup`, {
+  const res = await fetch(`${API}/api/users/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -48,7 +48,7 @@ export const signupUser = async (data) => {
 
 
 export const loginUser = async (data) => {
-  const res = await fetch("http://localhost:6003/api/users/login", {
+  const res = await fetch(`${API}/api/users/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
