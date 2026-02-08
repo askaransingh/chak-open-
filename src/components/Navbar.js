@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logos from "../assets/logos.png";
 import { FiPhoneCall, FiUser, FiMenu, FiX } from "react-icons/fi";
- import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -95,14 +95,14 @@ export default function Navbar() {
   /* ================= HELPERS ================= */
   const isVIN = (v) => /^[A-HJ-NPR-Z0-9]{17}$/i.test(v);
 
-  function handleLogout() {
-    localStorage.clear();
-    setUser(null);
-    setDriver(null);
-    setMechanic(null);
-    setIsAdmin(false);
-    navigate("/");
-  }
+  // function handleLogout() {
+  //   localStorage.clear();
+  //   setUser(null);
+  //   setDriver(null);
+  //   setMechanic(null);
+  //   setIsAdmin(false);
+  //   navigate("/");
+  // }
 
   /* ================= SEARCH ================= */
   async function handleSearchInput(e) {
@@ -275,6 +275,7 @@ export default function Navbar() {
               ) : (
                 <>
                   {/* MOBILE SIGNUP */}
+                  <div ref={signupRef} className="relative">
                   <button
                     className="md:hidden border px-3 py-1 rounded"
                     onClick={() => setShowSignupCard(!showSignupCard)}
@@ -283,6 +284,31 @@ export default function Navbar() {
                   </button>
 
                   {/* DESKTOP BUTTONS */}
+                  {showSignupCard && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50 md:hidden">
+                      <button
+                        onClick={() => navigate("/SignupStep1")}
+                        className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                      >
+                        User Signup
+                      </button>
+
+                      <button
+                        onClick={() => navigate("/DriverSignup")}
+                        className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                      >
+                        Driver Signup
+                      </button>
+
+                      <button
+                        onClick={() => navigate("/MechanicSignup")}
+                        className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                      >
+                        Mechanic Signup
+                      </button>
+                    </div>
+                  )}
+                  </div>
                   <div className="hidden md:flex gap-3">
                     <button
                       className="bg-red-600 text-white px-4 py-2 rounded"
@@ -335,44 +361,44 @@ export default function Navbar() {
         <Link to="/CustomerProblem">Raise a Problem</Link>
         {isAdmin && <Link to="/admin" className="text-red-600 font-bold">Admin</Link>}
       </div> */}
-     
 
-<div className="overflow-x-auto whitespace-nowrap px-4 py-2 bg-gray-50 flex gap-4">
-  
-  <NavLink to="/" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    Home
-  </NavLink>
 
-  <NavLink to="/catalog" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    Parts for trucks
-  </NavLink>
+      <div className="overflow-x-auto whitespace-nowrap px-4 py-2 bg-gray-50 flex gap-4">
 
-  <NavLink to="/tractor-category" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    Tractor Parts
-  </NavLink>
+        <NavLink to="/" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          Home
+        </NavLink>
 
-  <NavLink to="/PickupCategory" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    Pickup Parts
-  </NavLink>
+        <NavLink to="/catalog" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          Parts for trucks
+        </NavLink>
 
-  <NavLink to="/checkout" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    Checkout
-  </NavLink>
+        <NavLink to="/tractor-category" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          Tractor Parts
+        </NavLink>
 
-  <NavLink to="/my-orders" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    My Orders
-  </NavLink>
+        <NavLink to="/PickupCategory" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          Pickup Parts
+        </NavLink>
 
-  <NavLink to="/CustomerProblem" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
-    Raise a Problem
-  </NavLink>
+        <NavLink to="/checkout" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          Checkout
+        </NavLink>
 
-  {isAdmin && (
-    <NavLink to="/admin" className={({ isActive }) => isActive ? "text-red-700 font-bold" : "text-red-600"}>
-      Admin
-    </NavLink>
-  )}
-</div>
+        <NavLink to="/my-orders" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          My Orders
+        </NavLink>
+
+        <NavLink to="/CustomerProblem" className={({ isActive }) => isActive ? "text-red-600 font-bold" : ""}>
+          Raise a Problem
+        </NavLink>
+
+        {isAdmin && (
+          <NavLink to="/admin" className={({ isActive }) => isActive ? "text-red-700 font-bold" : "text-red-600"}>
+            Admin
+          </NavLink>
+        )}
+      </div>
     </nav>
   );
 }
