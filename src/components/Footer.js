@@ -88,7 +88,7 @@ export default function Footer() {
                 className="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition"
               >
                 <PhoneCall className="mr-2" />
-                +91 98765 43210
+                +1 (780) 264‑2644
               </a>
             </div>
           </section>
