@@ -240,7 +240,7 @@ export default function Navbar() {
               href="tel:+919876543210"
               className="hidden md:flex items-center gap-1 text-gray-700"
             >
-              <FiPhoneCall /> +91 98765 43210
+              <FiPhoneCall /> +1 (780) 264‑2644
             </a>
 
             {/* PROFILE / SIGNUP */}
